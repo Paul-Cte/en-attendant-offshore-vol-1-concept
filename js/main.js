@@ -285,20 +285,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Bateau scroll
     const container = document.getElementById("boat-container");
+    const btnScroll = document.querySelector("#section10 a");
+
     if (container) {
-        const leftStart = -container.offsetWidth + 350;
-        const leftEnd = (window.innerWidth - container.offsetWidth) / 2;
-        const scrollNeeded = (leftEnd - leftStart);
-        container.style.left = leftStart + "px";
-        document.body.style.height = `calc(100vh + ${scrollNeeded}px)`;
+        if (window.innerWidth > 1250) {
+            const leftStart = -container.offsetWidth + 350;
+            const leftEnd = (window.innerWidth - container.offsetWidth) / 2;
+            const scrollNeeded = (leftEnd - leftStart);
+            container.style.left = leftStart + "px";
+            document.body.style.height = `calc(100vh + ${scrollNeeded}px)`;
 
-        window.addEventListener("scroll", () => {
-            container.style.left = Math.min(leftStart + window.scrollY, leftEnd) + "px";
-        });
+            window.addEventListener("scroll", () => {
+                container.style.left = Math.min(leftStart + window.scrollY, leftEnd) + "px";
+            });
 
-        const btnScroll = document.querySelector("#section10 a");
+            if (btnScroll) {
+                btnScroll.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: scrollNeeded, behavior: "smooth" });
+                });
+            }
+        } else {
+            if (btnScroll) {
+                btnScroll.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+                });
+            }
+        }
+
         if (btnScroll) {
-            btnScroll.addEventListener("click", () => window.scrollTo({ top: scrollNeeded, behavior: "smooth" }));
             btnScroll.addEventListener("mouseenter", () => gsap.to(cursor, { width: 0, height: 0, duration: 0.3 }));
             btnScroll.addEventListener("mouseleave", () => gsap.to(cursor, { width: 90, height: 90, duration: 0.3 }));
         }
