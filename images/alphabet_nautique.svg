@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="220px" height="60px">
+  
+  <g transform="translate(0, 0)">
+    <rect width="60" height="60" fill="#000000" />
+    <rect x="15" y="15" width="30" height="30" fill="#c0333b" />
+    <rect width="60" height="60" fill="none" stroke="#c0333b" stroke-width="2" />
+  </g>
+
+  <g transform="translate(80, 0)">
+    <polygon points="0,0 0,60 60,60" fill="#000000" />
+    <polygon points="0,0 60,60 60,0" fill="#c0333b" />
+    <rect width="60" height="60" fill="none" stroke="#c0333b" stroke-width="2" />
+  </g>
+
+  <g transform="translate(160, 0)">
+    <rect x="0" y="0" width="30" height="30" fill="#000000" />
+    <rect x="30" y="30" width="30" height="30" fill="#000000" />
+    <rect x="30" y="0" width="30" height="30" fill="#c0333b" />
+    <rect x="0" y="30" width="30" height="30" fill="#c0333b" />
+    <rect width="60" height="60" fill="none" stroke="#c0333b" stroke-width="2" />
+  </g>
+
+</svg>
