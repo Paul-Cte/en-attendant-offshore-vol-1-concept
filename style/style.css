@@ -670,6 +670,18 @@ tr:nth-child(even) td {
     height: 100px;
   }
 
+  .btn-close {
+    top: 20px;
+    right: 20px;
+    height: 100px;
+    width: 100px;
+  }
+
+  .btn-close svg {
+    width: 100px;
+    height: 100px;
+  }
+
   #boat-container table .title.hovered .arrow {
     opacity: 1;
     transform: translateX(5px);
